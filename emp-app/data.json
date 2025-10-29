@@ -1,0 +1,36 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Anita Sharma",
+      "department": "Engineering",
+      "status": "Active",
+      "role": "Developer",
+      "salary": 80000
+    },
+    {
+      "id": 2,
+      "name": "Ravi Patel",
+      "department": "Marketing",
+      "status": "Active",
+      "role": "Marketing Manager",
+      "salary": 120000
+    },
+    {
+      "id": 3,
+      "name": "Sneha Gupta",
+      "department": "Finance",
+      "role": "Auditor",
+      "status": "Active",
+      "salary": 70000
+    },
+    {
+      "id": 4,
+      "name": "Vikas Rao",
+      "department": "Engineering",
+      "status": "Active",
+      "role": "Developer",
+      "salary": 85000
+    }
+  ]
+}

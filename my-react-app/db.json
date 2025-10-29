@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Abhinandan",
+      "email": "abhi@aiacademy.com"
+    },
+    {
+      "id": "2",
+      "name": "Priya Sharma",
+      "email": "priya@harman.com"
+    },
+    {
+      "id": "4",
+      "name": "Maya Iyer",
+      "email": "maya@fintechlabs.io"
+    },
+    {
+      "id": "5",
+      "name": "John Doe",
+      "email": "john@mlvision.org"
+    },
+    {
+      "id": "31fc",
+      "name": "Aman Raj",
+      "email": "aman.raj@fractal.ai"
+    },
+    {
+      "id": "81bb",
+      "name": "Ben Dukket",
+      "email": "ben.dukket@oligo.com"
+    }
+  ]
+}
