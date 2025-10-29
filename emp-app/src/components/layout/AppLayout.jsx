@@ -1,55 +1,83 @@
 import React from "react";
-import { Card, Layout, List, Menu, Statistic } from "antd";
-import { UserOutlined, BarChartOutlined, TeamOutlined } from "@ant-design/icons";
+import { Card, Layout, Menu, Statistic, Typography } from "antd";
+import {
+  UserOutlined,
+  BarChartOutlined,
+  TeamOutlined,
+  DashboardOutlined,
+  SettingOutlined,
+  LogoutOutlined,
+} from "@ant-design/icons";
 import EmployeePage from "../../features/employees/EmployeePage";
-import Title from "antd/es/skeleton/Title";
-
-const { Header, Sider, Content } = Layout;
-
-const AppLayout = () => (
-  <Layout style={{ minHeight: "100vh" }}>
-    {/* <Sider>
-      <Menu
+const { Header, Sider, Content, Footer } = Layout;
+const { Title } = Typography;
+const AppLayout = ({ employeeCount = 0, activeEmployees = 0 }) => {
+  const [collapsed, setCollapsed] = React.useState(false);
+  return (
+    <Layout style={{ minHeight: "100vh" }}>
+      {/* <Sider
+        collapsible
+        collapsed={collapsed}
+        onCollapse={setCollapsed}
         theme="dark"
-        defaultSelectedKeys={["1"]}
-        items={[
-          { key: "1", icon: <UserOutlined />, label: "Employees" },
-          { key: "2", icon: <BarChartOutlined />, label: "Analytics" },
-        ]}
-      />
-    </Sider> */}
-    <Layout>
-      <Header className="employee-header">
-        <div className="header-title">
-          <TeamOutlined />
-          <Title
-            level={4}
-            style={{ color: "white", margin: 0, marginLeft: 12 }}
+      >
+        <div
+          style={{
+            height: 64,
+            margin: 16,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <TeamOutlined style={{ fontSize: 24, color: "#fff" }} />
+          {!collapsed && (
+            <span style={{ color: "#fff", marginLeft: 12, fontSize: 16 }}>
+              EMS
+            </span>
+          )}
+        </div>
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+          <Menu.Item key="1" icon={<DashboardOutlined />}>
+            Dashboard
+          </Menu.Item>
+          <Menu.Item key="2" icon={<UserOutlined />}>
+            Employees
+          </Menu.Item>
+          <Menu.Item key="3" icon={<BarChartOutlined />}>
+            Reports
+          </Menu.Item>
+          <Menu.Item key="4" icon={<SettingOutlined />}>
+            Settings
+          </Menu.Item>
+          <Menu.Item
+            key="5"
+            icon={<LogoutOutlined />}
+            style={{ marginTop: "auto" }}
           >
-            Employee Management System
-          </Title>
-        </div>
-        <div className="header-stats">
-          <Card className="stat-card">
-            <Statistic
-              title="Total Employees"
-              value={List?.length || 0}
-              valueStyle={{ color: "white" }}
-            />
-          </Card>
-          {/* <Card className="stat-card">
-            <Statistic
-              title="Active Employees"
-              value={activeEmployees}
-              valueStyle={{ color: "white" }}
-            />
-          </Card> */}
-        </div>
-      </Header>
-      {/* <Content style={{ padding: 24 }}> */}
-        <EmployeePage />
-      {/* </Content> */}
+            Logout
+          </Menu.Item>
+        </Menu>
+      </Sider> */}
+      <Layout>
+        
+        <Content
+          style={{
+            margin: "24px 16px",
+            padding: 24,
+            background: "#fff",
+            borderRadius: 8,
+            minHeight: 280,
+          }}
+        >
+          <EmployeePage />
+        </Content>
+        <Footer style={{ textAlign: "center" }}>
+          Employee Management System ©{new Date().getFullYear()} Created by Your
+          Company
+        </Footer>
+      </Layout>
     </Layout>
-  </Layout>
-);
+  );
+};
 export default AppLayout;

@@ -181,35 +181,42 @@ const EmployeePage = () => {
       ),
     },
   ];
+  //Calculate total employees
+  const totalEmployees = list ? list.length : 0;
   // Calculate stats
   const activeEmployees = list
     ? list.filter((emp) => emp.status === "Active").length
     : 0;
   return (
     <Layout className="employee-layout">
-      <Header className="employee-header">
-        <div className="header-title">
-          <TeamOutlined />
-          <Title
-            level={4}
-            style={{ color: "white", margin: 0, marginLeft: 12 }}
-          >
-            Employee Management System
-          </Title>
-        </div>
-        <div className="header-stats">
-          <Card className="stat-card">
+     
+      <Header
+        style={{
+          padding: "0 20px",
+          background: "#fff",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Title level={4} style={{ margin: 0 }}>
+          Employee Management System
+        </Title>
+        <div style={{ display: "flex", gap: 16 }}>
+          <Card style={{ marginBottom: 0 }}>
             <Statistic
               title="Total Employees"
-              value={list?.length || 0}
-              valueStyle={{ color: "white" }}
+              value={totalEmployees}
+              prefix={<TeamOutlined />}
             />
           </Card>
-          <Card className="stat-card">
+          <Card style={{ marginBottom: 0 }}>
             <Statistic
               title="Active Employees"
               value={activeEmployees}
-              valueStyle={{ color: "white" }}
+              prefix={<UserOutlined />}
+              valueStyle={{ color: "#3f8600" }}
             />
           </Card>
         </div>
